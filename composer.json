@@ -12,6 +12,9 @@
             "email": "tina.nc.fish@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {}
+    "autoload": {
+      "psr-4": {
+        "Nctfish\\IcsGenerator\\": "src/"
+      }
+    }
 }
