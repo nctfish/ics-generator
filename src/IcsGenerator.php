@@ -2,6 +2,7 @@
 
 namespace Nctfish\IcsGenerator;
 
+use DateTime;
 
 class IcsGenerator
 {
@@ -27,7 +28,7 @@ class IcsGenerator
      * @param mixed $dtstart
      * @return $this
      */
-    public function setDtstart($dtstart)
+    public function setDtstart(DateTime $dtstart)
     {
         $this->dtstart = $dtstart;
 
@@ -38,7 +39,7 @@ class IcsGenerator
      * @param mixed $dtend
      * @return $this
      */
-    public function setDtend($dtend)
+    public function setDtend(DateTime $dtend)
     {
         $this->dtend = $dtend;
 
@@ -84,8 +85,8 @@ class IcsGenerator
       $string .= "VERSION:2.0" . PHP_EOL;
       $string .= "BEGIN:VEVENT" . PHP_EOL;
       $string .= "URL:" . $this->url . PHP_EOL;
-      $string .= "DTSTART:" . $this->dtstart . PHP_EOL;
-      $string .= "DTEND:" . $this->dtend . PHP_EOL;
+      $string .= "DTSTART:" . $this->dtstart->format('Ymd\THis\Z') . PHP_EOL;
+      $string .= "DTEND:" . $this->dtend->format('Ymd\THis\Z') . PHP_EOL;
       $string .= "SUMMARY:" . $this->summary . PHP_EOL;
       $string .= "DESCRIPTION:" . $this->description . PHP_EOL;
       $string .= "LOCATION:" . $this->location . PHP_EOL;
