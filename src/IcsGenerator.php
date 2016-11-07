@@ -85,7 +85,7 @@ class IcsGenerator
         return $this;
     }
 
-    public function getString(): string
+    public function __toString(): string
     {
         $string = 'BEGIN:VCALENDAR'.PHP_EOL;
         $string .= 'VERSION:2.0'.PHP_EOL;

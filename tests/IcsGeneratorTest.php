@@ -17,7 +17,7 @@ class IcsGeneratorTest extends \PHPUnit_Framework_TestCase
       ->setLocation('Test Location')
       ->setDtStart($testDate)
       ->setDtEnd($testDate)
-      ->getString();
+      ->__toString();
 
         $this->assertInternalType('string', $fileContents);
     }
@@ -33,5 +33,16 @@ class IcsGeneratorTest extends \PHPUnit_Framework_TestCase
 
             $this->assertInstanceOf(IcsGenerator::class, $returnedObject);
         }
+    }
+
+    public function test_casting_to_string_builds_the_ics_string()
+    {
+        $generator = (new IcsGenerator)
+            ->setDescription('Test')
+            ->setLocation('Test')
+            ->setDtstart($dt = new \DateTime)
+            ->setDtend($dt->add(new \DateInterval('P4D')));
+
+        $this->assertTrue(is_string((string) $generator));
     }
 }
