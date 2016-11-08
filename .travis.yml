@@ -2,7 +2,7 @@
 language: php
 
 before_script:
-  - curl -s http://getcomposer.org/install | php
+  - curl -s http://getcomposer.org/installer | php
   - php composer.phar install
 
 # list any PHP version you want to test against
