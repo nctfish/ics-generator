@@ -17,10 +17,5 @@
       "psr-4": {
         "Nctfish\\IcsGenerator\\": "src/"
       }
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "Nctfish\\IcsGenerator\\": "./tests"
-      }
     }
 }
