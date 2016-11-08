@@ -1,6 +1,10 @@
 # see http://about.travis-ci.org/docs/user/languages/php/ for more hints
 language: php
 
+before_script:
+  - curl -s http://getcomposer.org/install | php
+  - php composer.phar install
+
 # list any PHP version you want to test against
 php:
   # aliased to a recent 7.x version
